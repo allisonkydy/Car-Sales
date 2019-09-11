@@ -1,12 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import { useDispatch } from 'react-redux';
-import { addFeature as addFeatureAC, removeFeature as removeFeatureAC } from './actions';
+import { useDispatch } from "react-redux";
+import {
+  addFeature as addFeatureAC,
+  removeFeature as removeFeatureAC
+} from "./actions";
 
-import Header from './components/Header';
-import AddedFeatures from './components/AddedFeatures';
-import AdditionalFeatures from './components/AdditionalFeatures';
-import Total from './components/Total';
+import Header from "./components/Header";
+import AddedFeatures from "./components/AddedFeatures";
+import AdditionalFeatures from "./components/AdditionalFeatures";
+import Total from "./components/Total";
 
 const App = () => {
   const dispatch = useDispatch();
