@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { addFeature } from './actions';
+import { addFeature, removeFeature } from './actions';
 
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
@@ -10,7 +10,7 @@ import Total from './components/Total';
 
 const App = props => {
   const removeFeature = id => {
-    // console.log("remove feature");
+    props.removeFeature(id);
   };
 
   const addFeature = item => {
@@ -31,4 +31,4 @@ const App = props => {
   );
 };
 
-export default connect(null, { addFeature })(App);
+export default connect(null, { addFeature, removeFeature })(App);
