@@ -9,13 +9,11 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = props => {
-  const removeFeature = item => {
-    // dispatch an action here to remove an item
+  const removeFeature = id => {
+    // console.log("remove feature");
   };
 
-  const addFeature = (e, item) => {
-    e.preventDefault();
-    // console.log('item is adding');
+  const addFeature = item => {
     props.addFeature(item);
   };
 
@@ -23,7 +21,7 @@ const App = props => {
     <div className="boxes">
       <div className="box">
         <Header />
-        <AddedFeatures />
+        <AddedFeatures removeFeature={removeFeature} />
       </div>
       <div className="box">
         <AdditionalFeatures addFeature={addFeature} />
