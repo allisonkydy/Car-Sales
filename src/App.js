@@ -1,20 +1,22 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-import { addFeature, removeFeature } from './actions';
+import { useDispatch } from 'react-redux';
+import { addFeature as addFeatureAC, removeFeature as removeFeatureAC } from './actions';
 
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-const App = props => {
+const App = () => {
+  const dispatch = useDispatch();
+
   const removeFeature = feature => {
-    props.removeFeature(feature);
+    dispatch(removeFeatureAC(feature));
   };
 
   const addFeature = feature => {
-    props.addFeature(feature);
+    dispatch(addFeatureAC(feature));
   };
 
   return (
@@ -31,4 +33,4 @@ const App = props => {
   );
 };
 
-export default connect(null, { addFeature, removeFeature })(App);
+export default App;
