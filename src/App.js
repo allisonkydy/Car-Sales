@@ -1,17 +1,22 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { addItem } from './actions';
+
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-const App = () => {
+const App = props => {
   const removeFeature = item => {
     // dispatch an action here to remove an item
   };
 
-  const buyItem = item => {
-    // dipsatch an action here to add an item
+  const addItem = (e, item) => {
+    e.preventDefault();
+    // console.log('item is adding');
+    props.addItem(item);
   };
 
   return (
@@ -21,11 +26,11 @@ const App = () => {
         <AddedFeatures />
       </div>
       <div className="box">
-        <AdditionalFeatures />
+        <AdditionalFeatures addItem={addItem} />
         <Total />
       </div>
     </div>
   );
 };
 
-export default App;
+export default connect(null, { addItem })(App);
