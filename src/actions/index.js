@@ -1,4 +1,4 @@
-export const ADD_ITEM = 'ADD_ITEM';
-export const addItem = (item) => {
-  return { type: ADD_ITEM, payload: item};
+export const ADD_FEATURE = 'ADD_FEATURE';
+export const addFeature = (item) => {
+  return { type: ADD_FEATURE, payload: item};
 }

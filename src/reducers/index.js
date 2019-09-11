@@ -1,4 +1,4 @@
-import { ADD_ITEM } from "../actions";
+import { ADD_FEATURE } from "../actions";
 
 const initialState = {
   additionalPrice: 0,
@@ -19,7 +19,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_ITEM:
+    case ADD_FEATURE:
       return {
         ...state,
         car: {
