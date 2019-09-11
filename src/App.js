@@ -9,12 +9,12 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = props => {
-  const removeFeature = id => {
-    props.removeFeature(id);
+  const removeFeature = feature => {
+    props.removeFeature(feature);
   };
 
-  const addFeature = item => {
-    props.addFeature(item);
+  const addFeature = feature => {
+    props.addFeature(feature);
   };
 
   return (
